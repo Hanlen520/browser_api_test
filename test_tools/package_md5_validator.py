@@ -16,6 +16,7 @@ def md5sum(fname):
 
 
 def download_apk(url):
+    ##TODO: support  multiple theads download
     r = requests.get(url, stream=True)
     fname = r.url.split('/')[-1]
     with open(fname, 'wb') as f:
