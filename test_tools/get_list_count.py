@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding:utf-8
 import time
 import requests
 
@@ -7,9 +9,9 @@ def get_current_time():
 
 
 def get_items_count():
-    params = {'uid': 'fanq25bef785c9f113eb0b5d50138c87d3c7',
-              'uid2': 'fanq25bef785c9f113eb0b5d50138c87d3c7',
-              'eid': 'fanq25bef785c9f113eb0b5d50138c87d3c7',
+    params = {'uid': 'fanq25bef785c9f113eb0b5d50138c87d3c6',
+              'uid2': 'fanq25bef785c9f113eb0b5d50138c87d3c6',
+              'eid': 'fanq25bef785c9f113eb0b5d50138c87d3c6',
               'sign': 'llq',
               'version': '8.2.0.116',
               'market': 'nh0001',
@@ -21,8 +23,8 @@ def get_items_count():
               'v': '1',
               'sv': '12',
               'n': '20',
-              'newest_showtime': get_current_time() - 2,
-              'oldest_showtime': get_current_time() - 1,
+              'newest_showtime': get_current_time() - 200,
+              'oldest_showtime': get_current_time() - 100,
               'c': 'youlike',
               'scene': '9001',
               'sub_scene': '1',
@@ -48,7 +50,7 @@ def get_items_count():
 def run():
     for i in range(0, 100):
         c = get_items_count()
-        print(c)
+        print("第%s次刷新得到新闻条数为：%s" % (i, c))
 
 
 run()
